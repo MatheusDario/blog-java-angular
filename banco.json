@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "nome": "Wheslley",
+      "mensagem": "Esta postagem foi atualizada"
+    },
+    {
+      "id": 3,
+      "nome": "Carlos",
+      "mensagem": "Esta é minha primeira postagem"
+    },
+    {
+      "id": 4,
+      "nome": "Gabriel",
+      "mensagem": "Esta é uma nova postagem!"
+    }
+  ]
+}
