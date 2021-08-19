@@ -11,9 +11,9 @@
                   <a href="https://github.com/MatheusDario" target="_blank" class="btn btn-outline-dark d-flex justify-content-center">Github</a>
 
                   <hr class="mt-4 mb-4">
-                  <h6 class="mb-3 text-monospace text-center">Pesquisar por título</h6>
-                  <input type="text" class="form-control mb-3 w-100">
-                  <button class="btn btn-outline-warning w-100">Pesquisar</button>
+                  <h6 class="mb-3 text-monospace text-center">Pesquisar por Nome</h6>
+                  <input type="text" class="form-control mb-3 w-100" placeholder="Digite o nome do usuário">
+                  <button class="btn btn-outline-warning w-100" (click)='localizarMensagem()'>Pesquisar</button>
                 </div>
               </div>
         </div>
@@ -21,20 +21,31 @@
             <div>
                 <h3 class="text-center mb-4 text-monospace">Digite a baixo os seus comentários:</h3>
                 <div class="form-group">
-                    <label for="titulo" class="text-monospace">Titulo:</label>
-                    <input type="text" name="titulo" class="form-control" placeholder="Digite o titulo da postagem" id="titulo">
+                    <label for="nome" class="text-monospace">Nome:</label>
+                    <input type="text" name="nome" class="form-control" placeholder="Digite o seu nome" id="nome" [(ngModel)]='post.nome'>
                 </div>
                 <div class="form-group">
-                    <label for="texto" class="text-monospace">Texto:</label>
-                    <textarea name="texto" id="texto" cols="30" rows="4" class="form-control" placeholder="Digite a sua Mensagem"></textarea>
+                    <label for="mensagem" class="text-monospace">Mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" cols="30" rows="4" class="form-control" placeholder="Digite a sua Mensagem" [(ngModel)]='post.mensagem'></textarea>
                 </div>
                 <div class="d-flex justify-content-end mt-5">
-                    <button type="button" class="btn btn-outline-info w-25">Publicar</button>
+                    <button type="button" class="btn btn-outline-info w-25" (click)='cadastrarMensagem()'>Publicar</button>
                 </div>
             </div>
             <hr class="mt-5 mb-5">
 
             <h3 class="text-center mb-5 text-monospace">Comenatários Adicionados</h3>
+            <div class="container">
+                <div class="card mb-4" *ngFor="let post of listPost">
+                    <div class="card-header">
+                        <h5 class="card-title">{{post.id}}</h5>
+                    </div>
+                    <div class="card-bady">
+                        <p class="card-text"> {{post.nome}} </p>
+                        <p class="card-text"> {{post.mensagem}} </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
